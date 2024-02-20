@@ -18,6 +18,12 @@ namespace BE_BW1_Ecommerce
             {
                 CartRepeater.DataSource = cart;
                 CartRepeater.DataBind();
+                decimal total = 0;
+                foreach (Prodotto product in cart)
+                {
+                    total += product.Prezzo;
+                }
+            Totale.InnerText = total.ToString("0.00") + "€";
             } 
             
 

@@ -16,6 +16,8 @@
             </ItemTemplate>
 
         </asp:Repeater>
+        <hr />
+        <h2>Totale: <span id="Totale" runat="server"></span></h2>
     </div>
 
 </asp:Content>
