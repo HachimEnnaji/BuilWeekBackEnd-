@@ -204,6 +204,7 @@
     <Compile Include="Carrello.aspx.designer.cs">
       <DependentUpon>Carrello.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CartItem.cs" />
     <Compile Include="Modifica.aspx.cs">
       <DependentUpon>Modifica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

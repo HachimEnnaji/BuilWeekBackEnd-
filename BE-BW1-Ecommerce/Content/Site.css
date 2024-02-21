@@ -17,9 +17,10 @@ select,
 textarea {
     max-width: 280px;
 }
+
 .cardDettagli {
     background-color: #f5f0dd;
-} 
+}
 
 .wrapper {
     background-color: #F9EFDB;
@@ -31,6 +32,15 @@ div image {
     /*aspect-ratio: 3/2;*/
     /*object-fit: contain;*/
 }
+
+
+/*-------Stile Carrello-------*/
+.product-image {
+    width: 100px; /* Imposta la larghezza dell'immagine */
+    height: 100px; /* Imposta l'altezza dell'immagine */
+    margin-right: 10px; /* Aggiunge un po' di spazio tra l'immagine e il testo */
+}
+/*--------------------------*/
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
