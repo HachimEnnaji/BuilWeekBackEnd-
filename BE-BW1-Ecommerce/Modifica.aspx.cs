@@ -14,41 +14,42 @@ namespace BE_BW1_Ecommerce
             }
             else
             {
-                //string id = Request.QueryString["ID"];
-                //if (id != null)
-                //{
-                //    SqlConnection conn = serverConnection.Connection();
-                //    try
-                //    {
-                //        conn.Open();
-                //        string query = $"SELECT * FROM [Prodotto] WHERE IDGiocoDaTavolo = {id}";
-                //        SqlCommand cmd = new SqlCommand(query, conn);
-                //        SqlDataReader reader = cmd.ExecuteReader();
-                //        if (reader.Read())
-                //        {
-                //            txtTitolo.Text = reader["Titolo"].ToString();
+                if (!IsPostBack)
+                {
+                    string id = Request.QueryString["ID"];
+                    if (id != null)
+                    {
+                        SqlConnection conn = serverConnection.Connection();
+                        try
+                        {
+                            conn.Open();
+                            string query = $"SELECT * FROM [Prodotto] WHERE IDGiocoDaTavolo = {id}";
+                            SqlCommand cmd = new SqlCommand(query, conn);
+                            SqlDataReader reader = cmd.ExecuteReader();
+                            if (reader.Read())
+                            {
+                                txtTitolo.Text = reader["Titolo"].ToString();
 
-                //            //prendi il prezzo e lo converti in decimal con due cifre dopo lo 0 senza la valuta
-                //            decimal prezzoCompleto = Convert.ToDecimal(reader["Prezzo"]);
-                //            txtPrezzo.Text = prezzoCompleto.ToString();
-                //            txtDescrizione.Text = reader["Dettaglio"].ToString();
-                //            txtEditore.Text = reader["Editore"].ToString();
-                //            txtImmagine.Text = reader["Immagine"].ToString();
-                //        }
-                //    }
-                //    catch (Exception ex)
-                //    {
-                //        Response.Write(ex.Message);
-                //    }
-                //    finally
-                //    {
-                //        conn.Close();
-                //    }
-                //}
+                                //prendi il prezzo e lo converti in decimal con due cifre dopo lo 0 senza la valuta
+                                decimal prezzoCompleto = Convert.ToDecimal(reader["Prezzo"]);
+                                txtPrezzo.Text = prezzoCompleto.ToString();
+                                txtDescrizione.Text = reader["Dettaglio"].ToString();
+                                txtEditore.Text = reader["Editore"].ToString();
+                                txtImmagine.Text = reader["Immagine"].ToString();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Response.Write(ex.Message);
+                        }
+                        finally
+                        {
+                            conn.Close();
+                        }
+                    }
+                }
             }
-
         }
-
 
         protected void btnModifica_Click(object sender, EventArgs e)
         {
@@ -67,10 +68,8 @@ namespace BE_BW1_Ecommerce
                 cmd.Parameters.AddWithValue("@Editore", txtEditore.Text);
                 cmd.Parameters.AddWithValue("@Immagine", txtImmagine.Text);
                 cmd.Parameters.AddWithValue("@ID", id);
-                Response.Write(query);
+                System.Diagnostics.Debug.WriteLine(txtTitolo.Text, txtPrezzo.Text, txtDescrizione.Text);
                 SqlDataReader reader = cmd.ExecuteReader();
-
-
             }
             catch (Exception ex)
             {
