@@ -15,7 +15,7 @@
                     <p class="card-text"><%# Eval ("Prodotto.Prezzo", "{0:c2}") %></p>
                     <!--aggiungo controlli per modificare la quantità e aggiornare il carrello-->
                     <asp:TextBox ID="txtQuantity" runat="server" Text='<%# Eval("Quantita") %>'></asp:TextBox>
-                    <asp:Button ID="btnUpdateQuantity" runat="server" Text="Aggiorna Carrello" OnClick="btnUpdateQuantity_Click" CommandArgument='<%# Eval("Prodotto.Id") %>' />
+                    <asp:Button ID="btnUpdateQuantity" runat="server" Text="Aggiorna Carrello" CssClass="btn btn-outline-success" OnClick="btnUpdateQuantity_Click" CommandArgument='<%# Eval("Prodotto.Id") %>' />
                 </div>
             </div>
         </div>
