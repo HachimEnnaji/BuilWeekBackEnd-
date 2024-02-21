@@ -19,7 +19,7 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <link href="style.css" rel="stylesheet" />
 </head>
 <body>
     <form runat="server">
@@ -54,7 +54,8 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="Dettagli.aspx">Dettagli</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="Carrello.aspx">Carrello</a></li>
-                         <asp:Button ID="SezioneAdmin" CssClass="btn btn-warning mx-1" Visible="false" Text="Sezione Admin" PostBackUrl="~/Admin.aspx" OnClick="SezioneAdmin_Click" runat="server" />
+                         <asp:Button ID="SezioneAdmin" CssClass="btn btn-warning mx-1" Visible="false" Text="Sezione Admin" PostBackUrl="~/Admin.aspx"  runat="server" />
+                        <asp:Button ID="AggiungiProdotto" CssClass="btn btn-outline-success" Visible="false" Text="Aggiungi Prodotto" PostBackUrl="~/AggiungiProdotto.aspx"  runat="server" />
                     </ul>
                 </div>
             </div>

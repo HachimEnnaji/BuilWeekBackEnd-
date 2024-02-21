@@ -26,8 +26,6 @@
             get => _immagine;
             set => _immagine = value;
         }
-
-
     }
 
 }

@@ -17,13 +17,14 @@ select,
 textarea {
     max-width: 280px;
 }
+
 .cardDettagli {
     background-color: #f5f0dd;
-} 
+}
 
 .wrapper {
     background-color: #F9EFDB;
-    color: #3E3232
+    color: #3E3232;
 }
 
 div image {
