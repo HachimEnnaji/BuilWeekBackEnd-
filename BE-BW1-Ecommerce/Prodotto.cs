@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace BE_BW1_Ecommerce
+﻿namespace BE_BW1_Ecommerce
 {
     public class Prodotto
     {
@@ -24,6 +19,12 @@ namespace BE_BW1_Ecommerce
         {
             get => _prezzo;
             set => _prezzo = value;
+        }
+        private string _immagine;
+        public string Immagine
+        {
+            get => _immagine;
+            set => _immagine = value;
         }
 
 

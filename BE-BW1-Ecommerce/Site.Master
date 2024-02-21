@@ -7,9 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.5.1/css/all.css">
     <title><%: Page.Title %> - Casablanca Board Games</title>
 
     <asp:PlaceHolder runat="server">
@@ -53,6 +54,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="Dettagli.aspx">Dettagli</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="Carrello.aspx">Carrello</a></li>
+                         <asp:Button ID="SezioneAdmin" CssClass="btn btn-warning mx-1" Visible="false" Text="Sezione Admin" PostBackUrl="~/Admin.aspx" OnClick="SezioneAdmin_Click" runat="server" />
                     </ul>
                 </div>
             </div>

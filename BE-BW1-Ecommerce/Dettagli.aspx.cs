@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace BE_BW1_Ecommerce
 {
@@ -13,31 +8,76 @@ namespace BE_BW1_Ecommerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-
-        //metodo per aggiungere prodotti al carrello
-        protected void addToCart_Click(object sender, EventArgs e)
-        {
-            
-
-
-            string productId = Request.QueryString["IDGiocoDaTavolo"]; //prendo l'id dall'url
-            List<string> cart;
-            if (Session["cart"] == null)
+            if (!IsPostBack)
             {
-                cart = new List<string>();
+                if (Request.QueryString["ID"] != null)
+                {
+
+                    // utilizzo la classe ServerConnection e nel try stabilisco la connessione
+                    SqlConnection conn = serverConnection.Connection();
+                    try
+                    {
+                        conn.Open();
+
+                        SqlCommand cmd = new SqlCommand("SELEZIONA_ID", conn);
+                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@ID", Request.QueryString["ID"]);
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+
+
+
+                        if (reader.Read()) //ciclo tutti i record 
+                        {
+
+
+                            Titolo.InnerHtml = reader["Titolo"].ToString();
+                            Image1.ImageUrl = reader["Immagine"].ToString();
+                            Dettaglio.InnerHtml = reader["Dettaglio"].ToString();
+
+
+                            //  Per stampare i primi 4 caratteri compresa la virgola
+                            // 1 metto leggo con reader storando il risultato dentro una variabile
+                            // 2 storo dentro una variabile il risultato con il metodo Substring
+                            decimal prezzoCompleto = Convert.ToDecimal(reader["Prezzo"]);
+                            Prezzo.InnerHtml = prezzoCompleto.ToString("C");
+
+                        }
+                    }
+
+                    catch (Exception ex)
+                    {
+                        Response.Write(ex.Message);
+                    }
+                }
+                else
+                {
+                    Response.Write("id null");
+                }
+
             }
             else
             {
-                cart = (List<string>)Session["cart"];
+                Response.Write("SONO NEL PRIMO IF");
             }
-            cart.Add(productId);
-            Session["cart"] = cart; // aggiorno sessione con carrello
-
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            HttpCookie carrelloCookie = Request.Cookies["CarrelloCookie"];
+            if (carrelloCookie != null)
+            {
+                carrelloCookie = new HttpCookie("CarrelloCookie");
 
+            }
+
+            carrelloCookie.Values["ID"] = Request.QueryString["ID"];
+
+
+            carrelloCookie.Expires = DateTime.Now.AddDays(10);
+            // Sovrascrivo o aggiungo il cookie alla risposta
+            Response.Cookies.Add(carrelloCookie);
+        }
     }
 }

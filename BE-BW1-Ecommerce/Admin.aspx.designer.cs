@@ -11,25 +11,25 @@ namespace BE_BW1_Ecommerce
 {
 
 
-    public partial class SiteMaster
+    public partial class Admin
     {
 
         /// <summary>
-        /// Controllo SezioneAdmin.
+        /// Controllo demo.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SezioneAdmin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl demo;
 
         /// <summary>
-        /// Controllo MainContent.
+        /// Controllo cardRepeater.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Repeater cardRepeater;
     }
 }

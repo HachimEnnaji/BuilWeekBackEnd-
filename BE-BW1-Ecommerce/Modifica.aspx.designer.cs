@@ -11,52 +11,70 @@ namespace BE_BW1_Ecommerce
 {
 
 
-    public partial class Dettagli
+    public partial class Modifica
     {
 
         /// <summary>
-        /// Controllo Image1.
+        /// Controllo txtTitolo.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.TextBox txtTitolo;
 
         /// <summary>
-        /// Controllo Titolo.
+        /// Controllo txtPrezzo.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Titolo;
+        protected global::System.Web.UI.WebControls.TextBox txtPrezzo;
 
         /// <summary>
-        /// Controllo Prezzo.
+        /// Controllo txtDescrizione.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prezzo;
+        protected global::System.Web.UI.WebControls.TextBox txtDescrizione;
 
         /// <summary>
-        /// Controllo Dettaglio.
+        /// Controllo txtEditore.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Dettaglio;
+        protected global::System.Web.UI.WebControls.TextBox txtEditore;
 
         /// <summary>
-        /// Controllo Button1.
+        /// Controllo txtImmagine.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox txtImmagine;
+
+        /// <summary>
+        /// Controllo btnModifica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnModifica;
+
+        /// <summary>
+        /// Controllo lblMessaggio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMessaggio;
     }
 }

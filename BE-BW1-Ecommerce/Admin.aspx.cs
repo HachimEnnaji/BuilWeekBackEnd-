@@ -1,16 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Web.UI;
 
 namespace BE_BW1_Ecommerce
 {
-    public partial class _Default : Page
+    public partial class Admin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["username"] == null)
             {
+                Response.Redirect("Login");
+            }
+            else
+            {
+                string username = Session["username"].ToString();
+                demo.InnerHtml = username;
                 SqlConnection conn = serverConnection.Connection();
                 try
                 {
@@ -20,6 +24,7 @@ namespace BE_BW1_Ecommerce
                     SqlDataReader reader = cmd.ExecuteReader();
                     cardRepeater.DataSource = reader;
                     cardRepeater.DataBind();
+
                 }
                 catch (Exception ex)
                 {
@@ -29,40 +34,20 @@ namespace BE_BW1_Ecommerce
                 {
                     conn.Close();
                 }
-
             }
         }
 
-        protected void addToCart_Click1(object sender, EventArgs e)
+        protected void Delete_Click(object sender, EventArgs e)
         {
-            string productId = ((System.Web.UI.WebControls.LinkButton)sender).CommandArgument;
-            Response.Write(productId);
-
-            if (Session["cart"] == null)
-            {
-                Session["cart"] = new List<Prodotto>();
-
-            }
+            string productId = ((System.Web.UI.WebControls.Button)sender).CommandArgument;
             SqlConnection conn = serverConnection.Connection();
             try
             {
                 conn.Open();
-                string query = $"SELECT IDGiocoDaTavolo, Titolo, Prezzo FROM [Prodotto] WHERE IDGiocoDaTavolo = {productId}";
-
+                string query = $"DELETE FROM [Prodotto] WHERE IDGiocoDaTavolo = {productId}";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    List<Prodotto> cart = (List<Prodotto>)Session["cart"];
-                    Prodotto prodotto = new Prodotto();
-                    prodotto.Id = Convert.ToInt32(reader["IDGiocoDaTavolo"]);
-                    prodotto.Titolo = reader["Titolo"].ToString();
-                    prodotto.Prezzo = Convert.ToDecimal(reader["Prezzo"]);
-                    cart.Add(prodotto);
-                    Session["cart"] = cart;
-                    Response.Redirect("Default");
-
-                }
+                cmd.ExecuteNonQuery();
+                Response.Redirect("Admin");
             }
             catch (Exception ex)
             {
@@ -72,7 +57,6 @@ namespace BE_BW1_Ecommerce
             {
                 conn.Close();
             }
-
 
         }
     }
