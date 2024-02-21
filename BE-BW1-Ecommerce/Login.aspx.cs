@@ -20,7 +20,7 @@ namespace BE_BW1_Ecommerce
             }
         }
 
-        protected void btnLogin_Click1(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection conn = serverConnection.Connection();
             try
