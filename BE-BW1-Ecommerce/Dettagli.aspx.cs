@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Web;
-using System.Web.Services.Description;
 
 namespace BE_BW1_Ecommerce
 {
@@ -135,6 +133,7 @@ namespace BE_BW1_Ecommerce
                     prodotto.Prezzo = Convert.ToDecimal(reader["Prezzo"]);
                     prodotto.Immagine = reader["Immagine"].ToString();
 
+
                     int.TryParse(Quantity.Value, out int currentValue);
                     CartItem existingCartItem = cart.Find(i => i.Prodotto.Id == prodotto.Id);
                     if (existingCartItem != null)
@@ -151,7 +150,7 @@ namespace BE_BW1_Ecommerce
 
                     Session["cart"] = cart;
 
-                    Response.Redirect("Dettagli?ID=" + prodotto.Id);
+                    Response.Redirect(Request.RawUrl);
                 }
             }
             catch (Exception ex)
