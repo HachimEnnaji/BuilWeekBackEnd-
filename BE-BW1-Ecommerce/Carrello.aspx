@@ -11,6 +11,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><%# Eval ("Titolo") %></h5>
                         <p class="card-text"><%# Eval ("Prezzo", "{0:c2}") %></p>
+                       
                     </div>
                 </div>
             </ItemTemplate>

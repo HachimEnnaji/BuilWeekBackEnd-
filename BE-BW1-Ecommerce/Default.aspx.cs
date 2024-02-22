@@ -47,14 +47,19 @@ namespace BE_BW1_Ecommerce
             try
             {
                 conn.Open();
+
                 string query = $"SELECT IDGiocoDaTavolo, Titolo, Prezzo FROM [Prodotto] WHERE IDGiocoDaTavolo = {productId}";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
+
                 SqlDataReader reader = cmd.ExecuteReader();
+
                 if (reader.Read())
                 {
                     List<Prodotto> cart = (List<Prodotto>)Session["cart"];
+
                     Prodotto prodotto = new Prodotto();
+
                     prodotto.Id = Convert.ToInt32(reader["IDGiocoDaTavolo"]);
                     prodotto.Titolo = reader["Titolo"].ToString();
                     prodotto.Prezzo = Convert.ToDecimal(reader["Prezzo"]);

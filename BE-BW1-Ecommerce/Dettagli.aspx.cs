@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web;
+using System.Web.Services.Description;
 
 namespace BE_BW1_Ecommerce
 {
@@ -12,13 +14,14 @@ namespace BE_BW1_Ecommerce
             {
                 if (Request.QueryString["ID"] != null)
                 {
-
+                  
                     // utilizzo la classe ServerConnection e nel try stabilisco la connessione
                     SqlConnection conn = serverConnection.Connection();
                     try
                     {
-                        conn.Open();
 
+                        conn.Open();
+                        Session["QuantityValue"] = 1;
                         SqlCommand cmd = new SqlCommand("SELEZIONA_ID", conn);
                         cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -33,6 +36,8 @@ namespace BE_BW1_Ecommerce
 
 
                             Titolo.InnerHtml = reader["Titolo"].ToString();
+                            Titolone.InnerHtml = reader["Titolo"].ToString();
+                            Editore.InnerHtml = reader["Editore"].ToString();
                             Image1.ImageUrl = reader["Immagine"].ToString();
                             Dettaglio.InnerHtml = reader["Dettaglio"].ToString();
 
@@ -63,21 +68,99 @@ namespace BE_BW1_Ecommerce
             }
         }
 
+        
+
+
+        protected void PlusButton(object sender, EventArgs e)
+        {
+           
+
+            int currentValue = Convert.ToInt32(Session["QuantityValue"]);
+
+            int newValue = currentValue + 1;
+
+            Quantity.Value = newValue.ToString();
+
+             Session["QuantityValue"] = newValue;
+
+
+
+        }
+
+
+        protected void MinButton(object sender, EventArgs e)
+        {
+           
+            int currentValue = Convert.ToInt32(Session["QuantityValue"]);
+
+            if(currentValue >= 2) {
+
+            int newValue = currentValue - 1;
+
+            Quantity.Value = newValue.ToString();
+
+            Session["QuantityValue"] = newValue;
+            }
+        }
+
+
+        //    //    //    /  //     //   //    //    //   //   //   //     //
         protected void Button1_Click(object sender, EventArgs e)
         {
-            HttpCookie carrelloCookie = Request.Cookies["CarrelloCookie"];
-            if (carrelloCookie != null)
-            {
-                carrelloCookie = new HttpCookie("CarrelloCookie");
 
+
+            if (Session["cart"] == null)
+            {
+                // Se la sessione non contiene ancora una lista
+                Session["cart"] = new List<Prodotto>();
             }
 
-            carrelloCookie.Values["ID"] = Request.QueryString["ID"];
+            SqlConnection conn = serverConnection.Connection();
+            try
+            {
+                conn.Open();
 
+                SqlCommand cmd = new SqlCommand("SELEZIONA_ID", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ID", Request.QueryString["ID"]);
+                SqlDataReader reader = cmd.ExecuteReader();
 
-            carrelloCookie.Expires = DateTime.Now.AddDays(10);
-            // Sovrascrivo o aggiungo il cookie alla risposta
-            Response.Cookies.Add(carrelloCookie);
+                if (reader.Read())
+                {
+                    // Recupera la lista esistente dal carrello nella sessione
+                    List<Prodotto> cart = (List<Prodotto>)Session["cart"];
+
+                    Prodotto prodotto = new Prodotto();
+                    prodotto.Id = Convert.ToInt32(reader["IDGiocoDaTavolo"]);
+                    prodotto.Titolo = reader["Titolo"].ToString();
+                    prodotto.Prezzo = Convert.ToDecimal(reader["Prezzo"]);
+                    prodotto.Immagine = reader["Immagine"].ToString();
+
+                    // finché currentValue è superiore a i i++ e mi aggiunge un prodotto a Cart {++_____++}
+                    int.TryParse(Quantity.Value, out int currentValue);
+                    for (int i = 0; i < currentValue; i++ ) {
+
+                        cart.Add(prodotto);
+                    }
+                    
+                    
+
+                    // Aggiorno la sessione cart con la lista aggiornata
+                    Session["cart"] = cart;
+
+                    Response.Redirect("Dettagli?ID=" + prodotto.Id);
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
+
+
     }
 }

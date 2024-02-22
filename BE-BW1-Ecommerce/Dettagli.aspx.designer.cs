@@ -15,6 +15,15 @@ namespace BE_BW1_Ecommerce
     {
 
         /// <summary>
+        /// Controllo Titolone.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Titolone;
+
+        /// <summary>
         /// Controllo Image1.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,33 @@ namespace BE_BW1_Ecommerce
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
+        /// Controllo bottone2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bottone2;
+
+        /// <summary>
+        /// Controllo Quantity.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Quantity;
+
+        /// <summary>
+        /// Controllo Bottone3.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Bottone3;
 
         /// <summary>
         /// Controllo Titolo.
@@ -40,6 +76,15 @@ namespace BE_BW1_Ecommerce
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Prezzo;
+
+        /// <summary>
+        /// Controllo Editore.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Editore;
 
         /// <summary>
         /// Controllo Dettaglio.

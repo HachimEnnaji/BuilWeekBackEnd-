@@ -1,14 +1,19 @@
 ﻿﻿ /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 body {
-    background-color: #B5C0D0
+    background-image: url("immagini/iStock-1362563519.jpg");
 }
+body {
+    background-image: url("immagini/iStock-496431362.jpg");
+}
+
 
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
     font-family: "Nunito", sans serif;
+    
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -19,6 +24,7 @@ textarea {
 }
 .cardDettagli {
     background-color: #f5f0dd;
+  
 } 
 
 .wrapper {
