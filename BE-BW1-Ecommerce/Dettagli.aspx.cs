@@ -136,13 +136,18 @@ namespace BE_BW1_Ecommerce
                     prodotto.Immagine = reader["Immagine"].ToString();
 
                     int.TryParse(Quantity.Value, out int currentValue);
-                    CartItem cartItem = new CartItem();
-                    cartItem.Prodotto = prodotto;
-                    for (int i = 0; i < currentValue; i++)
+                    CartItem existingCartItem = cart.Find(i => i.Prodotto.Id == prodotto.Id);
+                    if (existingCartItem != null)
                     {
-                        cartItem.Quantita += 1;
+                        existingCartItem.Quantita += currentValue;
                     }
-                    cart.Add(cartItem);
+                    else
+                    {
+                        CartItem cartItem = new CartItem();
+                        cartItem.Prodotto = prodotto;
+                        cartItem.Quantita = currentValue;
+                        cart.Add(cartItem);
+                    }
 
                     Session["cart"] = cart;
 
@@ -161,3 +166,4 @@ namespace BE_BW1_Ecommerce
 
     }
 }
+
