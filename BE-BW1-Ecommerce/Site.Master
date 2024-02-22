@@ -58,7 +58,6 @@
                             <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
                             <li class="nav-item"><a class="nav-link" runat="server" href="Carrello.aspx">Carrello</a></li>
                         </ul>
-                        <asp:Button ID="SvuotaCarrello" CssClass="btn btn-outline-danger border-0" Text="Svuota Carrello" OnClick="SvuotaCarrello_Click" runat="server" />
 
                     </div>
                     <div class="d-flex">
@@ -66,8 +65,9 @@
                         <asp:Button ID="AggiungiProdotto" CssClass="btn btn-outline-warning border-0" Visible="false" Text="Crea Prodotto" PostBackUrl="~/AggiungiProdotto.aspx" runat="server" />
                     </div>
                     <div class="d-flex">
-                        <asp:LinkButton ID="Login" CssClass="btn btn-outline-secondary me-2 rounded-circle"  Visible="true" PostBackUrl="~/Login.aspx" runat="server" > <i class="fa-solid fa-user"></i> </asp:LinkButton> 
-                        <asp:LinkButton ID="Logout" CssClass="btn btn-outline-primary me-2  rounded-circle" Visible="false"  OnClick="Logout_Click" runat="server" > <i class="fa-solid fa-right-from-bracket"></i> </asp:LinkButton> 
+                        <asp:Button ID="SvuotaCarrello" CssClass="btn btn-outline-danger border-0 me-2" Text="Svuota Carrello" OnClick="SvuotaCarrello_Click" runat="server" />
+                        <asp:LinkButton ID="Login" CssClass="btn me-2 btn-outline-light rounded-circle"  Visible="true" PostBackUrl="~/Login.aspx" runat="server" > <i class="fa-solid fa-user"></i> </asp:LinkButton> 
+                        <asp:LinkButton ID="Logout" CssClass="btn btn-outline-light me-2  rounded-circle" Visible="false"  OnClick="Logout_Click" runat="server" > <i class="fa-solid fa-right-from-bracket"></i> </asp:LinkButton> 
                     </div>
                 </div>
             </div>

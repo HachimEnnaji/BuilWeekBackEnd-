@@ -15,7 +15,7 @@
                                     <p class="card-text price-text"><%# Eval ("Prezzo", "{0:c2}") %></p>
                                 </div>
                                 <div class="card-footer">
-                                    <a href="Dettagli.aspx?ID=<%# Eval("IDGiocoDaTavolo") %>" class="btn btn-outline-secondary me-3">Dettagli</a>
+                                    <a href="Dettagli.aspx?ID=<%# Eval("IDGiocoDaTavolo") %>" id="Dettagli" class="btn me-3 detail-font">Dettagli</a>
                                     
                                     <asp:LinkButton ID="addToCart"  runat="server" OnClick="addToCart_Click1" CommandArgument='<%# Eval("IDGiocoDaTavolo") %>'  CssClass="btn btn-outline-success"><i class="fa-solid fa-cart-plus"></i></asp:LinkButton>
                                 </div>

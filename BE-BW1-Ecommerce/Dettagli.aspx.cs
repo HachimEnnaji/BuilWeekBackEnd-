@@ -33,8 +33,7 @@ namespace BE_BW1_Ecommerce
                         {
 
 
-                            Titolo.InnerHtml = reader["Titolo"].ToString();
-                            Titolone.InnerHtml = reader["Titolo"].ToString();
+                            Titolo.InnerHtml = reader["Titolo"].ToString(); 
                             Editore.InnerHtml = reader["Editore"].ToString();
                             Image1.ImageUrl = reader["Immagine"].ToString();
                             Dettaglio.InnerHtml = reader["Dettaglio"].ToString();
