@@ -14,7 +14,7 @@ namespace BE_BW1_Ecommerce
             {
                 if (Request.QueryString["ID"] != null)
                 {
-                  
+
                     // utilizzo la classe ServerConnection e nel try stabilisco la connessione
                     SqlConnection conn = serverConnection.Connection();
                     try
@@ -55,25 +55,27 @@ namespace BE_BW1_Ecommerce
                     {
                         Response.Write(ex.Message);
                     }
+
+                    finally
+                    {
+                        conn.Close();
+                    }
                 }
                 else
                 {
-                    Response.Write("id null");
+                    Response.Redirect("Default");
                 }
 
             }
-            else
-            {
-                Response.Write("SONO NEL PRIMO IF");
-            }
+
         }
 
-        
+
 
 
         protected void PlusButton(object sender, EventArgs e)
         {
-           
+
 
             int currentValue = Convert.ToInt32(Session["QuantityValue"]);
 
@@ -81,7 +83,7 @@ namespace BE_BW1_Ecommerce
 
             Quantity.Value = newValue.ToString();
 
-             Session["QuantityValue"] = newValue;
+            Session["QuantityValue"] = newValue;
 
 
 
@@ -90,16 +92,17 @@ namespace BE_BW1_Ecommerce
 
         protected void MinButton(object sender, EventArgs e)
         {
-           
+
             int currentValue = Convert.ToInt32(Session["QuantityValue"]);
 
-            if(currentValue >= 2) {
+            if (currentValue >= 2)
+            {
 
-            int newValue = currentValue - 1;
+                int newValue = currentValue - 1;
 
-            Quantity.Value = newValue.ToString();
+                Quantity.Value = newValue.ToString();
 
-            Session["QuantityValue"] = newValue;
+                Session["QuantityValue"] = newValue;
             }
         }
 
