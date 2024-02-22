@@ -11,6 +11,7 @@ namespace BE_BW1_Ecommerce
             if (Session["username"] != null)
             {
                 SezioneAdmin.Visible = true;
+                AggiungiProdotto.Visible = true;
             }
             else
             {
@@ -18,9 +19,5 @@ namespace BE_BW1_Ecommerce
             }
         }
 
-        protected void SezioneAdmin_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

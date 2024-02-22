@@ -24,6 +24,15 @@ namespace BE_BW1_Ecommerce
         protected global::System.Web.UI.WebControls.Button SezioneAdmin;
 
         /// <summary>
+        /// Controllo AggiungiProdotto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AggiungiProdotto;
+
+        /// <summary>
         /// Controllo MainContent.
         /// </summary>
         /// <remarks>

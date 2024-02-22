@@ -10,7 +10,7 @@
                     <ItemTemplate>
                         <div class="col-sm-6 col-md-4 col-lg-3 gy-3">
                             <div class="card wrapper h-100 w-100">
-                                <img src='<%# Eval ("Immagine") %>' class="card-img-top" alt="...">
+                                <img src='<%# Eval ("Immagine") %>' class="card-img-top" alt='<%# Eval ("Titolo") %>'>
                                 <div class="card-body">
                                     <h5 class="card-title"><%# Eval ("Titolo") %></h5>
                                     <p class="card-text"><%# Eval ("Prezzo", "{0:c2}") %></p>

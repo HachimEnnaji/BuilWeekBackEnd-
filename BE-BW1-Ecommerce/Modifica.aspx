@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Modifica.aspx.cs" Inherits="BE_BW1_Ecommerce.Modifica" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    //form to modify the product
+    
         <div class="form-group">
             <label for="txtTitolo">Titolo</label>
             <asp:TextBox ID="txtTitolo" runat="server" CssClass="form-control"></asp:TextBox>

@@ -4,7 +4,6 @@ body {
     background-color: black !important;
 }
 
-
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
@@ -25,7 +24,7 @@ textarea {
 
 .wrapper {
     background-color: #F9EFDB;
-    color: #3E3232
+    color: #3E3232;
 }
 
 div image {
@@ -33,15 +32,6 @@ div image {
     /*aspect-ratio: 3/2;*/
     /*object-fit: contain;*/
 }
-
-
-/*-------Stile Carrello-------*/
-.product-image {
-    width: 100px; /* Imposta la larghezza dell'immagine */
-    height: 100px; /* Imposta l'altezza dell'immagine */
-    margin-right: 10px; /* Aggiunge un po' di spazio tra l'immagine e il testo */
-}
-/*--------------------------*/
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
