@@ -1,9 +1,37 @@
-﻿﻿ /* Wrapping element */
+﻿ /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
+body {
+    background: rgb(40,0,60);
+    background: linear-gradient(180deg, rgba(40,0,60,0.8981967787114846) 0%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+    
+}
+.title{
+    font-family: "Aladin", system-ui;
+}
 
-
-
-
+.navbar {
+    background: linear-gradient(187deg, rgba(31, 36, 39, 10.8981967787114846) 0%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
+    backdrop-filter: blur(10px);
+}
+.badge {
+    background: linear-gradient(187deg, rgba(31, 36, 39, 10.8981967787114846) 0%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%)!important;
+}
+.card-body {
+   position:relative;
+}
+.price-text {
+    font-family: "Nunito", sans serif;
+    font-size: 1em;
+    color: #f5f0dd;
+    backdrop-filter: invert(0.5);
+    background: linear-gradient(187deg, rgba(31, 36, 39, 10.8981967787114846) 0%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%) !important;
+    width: fit-content;
+    padding-inline: 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom:0;
+right:5%;
+}
 .body-content {
     margin-top: 15px;
     padding-left: 15px;
@@ -21,11 +49,15 @@ textarea {
 
 .cardDettagli {
     background-color: #f5f0dd;
-
+}
 
 .wrapper {
-    background-color: #F9EFDB;
-    color: #3E3232
+    color: white;
+    border: none;
+    background-color: transparent;
+    backdrop-filter: hue-rotate(45deg);
+    box-shadow: 1px 2px 4px -1px rgba(255,255,255,0.3);
+    font-family: "MedievalSharp", cursive;
 }
 
 div image {
@@ -49,3 +81,7 @@ div image {
         padding: 0;
     }
 }
+
+linear-gradient(180deg, rgba(31, 36, 39, 10.8981967787114846) 0%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%)
+
+

@@ -8,9 +8,12 @@ namespace BE_BW1_Ecommerce
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
             if (txtUsername.Text == "admin" && txtPassword.Text == "admin")
             {
                 Session["username"] = txtUsername.Text;
+                System.Diagnostics.Debug.WriteLine(Session["username"]);
                 Response.Redirect("Admin");
             }
             else if (IsPostBack)

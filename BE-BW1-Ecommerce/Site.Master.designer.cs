@@ -15,13 +15,22 @@ namespace BE_BW1_Ecommerce
     {
 
         /// <summary>
+        /// Controllo SvuotaCarrello.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SvuotaCarrello;
+
+        /// <summary>
         /// Controllo SezioneAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SezioneAdmin;
+        protected global::System.Web.UI.WebControls.LinkButton SezioneAdmin;
 
         /// <summary>
         /// Controllo AggiungiProdotto.
@@ -31,6 +40,24 @@ namespace BE_BW1_Ecommerce
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AggiungiProdotto;
+
+        /// <summary>
+        /// Controllo Login.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Login;
+
+        /// <summary>
+        /// Controllo Logout.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Logout;
 
         /// <summary>
         /// Controllo MainContent.

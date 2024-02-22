@@ -4,23 +4,24 @@
 
 <html lang="it">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aladin&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v6.5.1/css/all.css">
     <title><%: Page.Title %> - Casablanca Board Games</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link href="~/Content/Site.css" rel="stylesheet" />
-    
+
 </head>
 <body>
     <form runat="server">
@@ -45,23 +46,34 @@
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Casablanca Board Games</a>
+                <a class="navbar-brand title fs-3" runat="server" href="~/">Pendragon Board Games</a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Attiva/Disattiva spostamento" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="Carrello.aspx">Carrello</a></li>
-                         <asp:Button ID="SezioneAdmin" CssClass="btn btn-warning mx-1" Visible="false" Text="Sezione Admin" PostBackUrl="~/Admin.aspx"  runat="server" />
-                        <asp:Button ID="AggiungiProdotto" CssClass="btn btn-outline-success" Visible="false" Text="Aggiungi Prodotto" PostBackUrl="~/AggiungiProdotto.aspx"  runat="server" />
-                    </ul>
+                    <div class="d-flex">
+                        <ul class="navbar-nav flex-grow-1">
+
+                            <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" runat="server" href="Carrello.aspx">Carrello</a></li>
+                        </ul>
+                        <asp:Button ID="SvuotaCarrello" CssClass="btn btn-outline-danger border-0" Text="Svuota Carrello" OnClick="SvuotaCarrello_Click" runat="server" />
+
+                    </div>
+                    <div class="d-flex">
+                        <asp:LinkButton ID="SezioneAdmin" CssClass="btn btn-warning mx-1 rounded-circle" Visible="false" Text="Sezione Admin" PostBackUrl="~/Admin.aspx" runat="server" > <i class="fa-solid fa-screwdriver-wrench"></i> </asp:LinkButton> 
+                        <asp:Button ID="AggiungiProdotto" CssClass="btn btn-outline-warning border-0" Visible="false" Text="Crea Prodotto" PostBackUrl="~/AggiungiProdotto.aspx" runat="server" />
+                    </div>
+                    <div class="d-flex">
+                        <asp:LinkButton ID="Login" CssClass="btn btn-outline-secondary me-2 rounded-circle"  Visible="true" PostBackUrl="~/Login.aspx" runat="server" > <i class="fa-solid fa-user"></i> </asp:LinkButton> 
+                        <asp:LinkButton ID="Logout" CssClass="btn btn-outline-primary me-2  rounded-circle" Visible="false"  OnClick="Logout_Click" runat="server" > <i class="fa-solid fa-right-from-bracket"></i> </asp:LinkButton> 
+                    </div>
                 </div>
             </div>
         </nav>
         <div class="container body-content">
-            <asp:ContentPlaceHolder  ID="MainContent" runat="server">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>

@@ -16,8 +16,8 @@
                                     <p class="card-text"><%# Eval ("Prezzo", "{0:c2}") %></p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between">
-                                    <a href="Modifica.aspx?ID=<%# Eval("IDGiocoDaTavolo") %>" class="btn btn-warning">Modifica</a>
-                                    <asp:Button ID="Delete" Text="Elimina" runat="server" OnClick="Delete_Click" CssClass="btn btn-danger" CommandArgument=<%# Eval("IDGiocoDaTavolo") %>/>
+                                    <a href="Modifica.aspx?ID=<%# Eval("IDGiocoDaTavolo") %>" class="btn btn-warning rounded-circle"><i class="fa-solid fa-wrench"></i></a>
+                                    <asp:LinkButton ID="Delete" runat="server" OnClick="Delete_Click" CssClass="btn btn-danger rounded-circle" CommandArgument=<%# Eval("IDGiocoDaTavolo") %>> <i class="fa-solid fa-trash"></i> </asp:LinkButton>
                                 </div>
                             </div>
                         </div>

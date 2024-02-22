@@ -39,7 +39,7 @@ namespace BE_BW1_Ecommerce
 
         protected void Delete_Click(object sender, EventArgs e)
         {
-            string productId = ((System.Web.UI.WebControls.Button)sender).CommandArgument;
+            string productId = ((System.Web.UI.WebControls.LinkButton)sender).CommandArgument;
             SqlConnection conn = serverConnection.Connection();
             try
             {

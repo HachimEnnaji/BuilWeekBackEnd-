@@ -12,7 +12,7 @@
                                 <img src='<%# Eval ("Immagine") %>' class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title"><%# Eval ("Titolo") %></h5>
-                                    <p class="card-text"><%# Eval ("Prezzo", "{0:c2}") %></p>
+                                    <p class="card-text price-text"><%# Eval ("Prezzo", "{0:c2}") %></p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="Dettagli.aspx?ID=<%# Eval("IDGiocoDaTavolo") %>" class="btn btn-outline-secondary me-3">Dettagli</a>
