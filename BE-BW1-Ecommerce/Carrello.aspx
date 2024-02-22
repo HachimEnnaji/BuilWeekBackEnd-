@@ -6,6 +6,8 @@
     <!--Repeater per visualizzare i prodotti nel carrello-->
     <div>
         <asp:Repeater ID="CartRepeater" runat="server">
+
+
     <ItemTemplate>
         <div class="card">
             <div class="card-body d-flex align-items-center">
@@ -16,6 +18,7 @@
                     <!--aggiungo controlli per modificare la quantità e aggiornare il carrello-->
                     <asp:TextBox ID="txtQuantity" runat="server" Text='<%# Eval("Quantita") %>'></asp:TextBox>
                     <asp:Button ID="btnUpdateQuantity" runat="server" Text="Aggiorna Carrello" CssClass="btn btn-outline-success" OnClick="btnUpdateQuantity_Click" CommandArgument='<%# Eval("Prodotto.Id") %>' />
+
                 </div>
             </div>
         </div>

@@ -4,29 +4,24 @@
 
 
 
-              <h2>Dettagli</h2>
+              <span class="fw-bolder fs-6" runat="server"> Dettagli </span>
+    <span id="Titolone" class="fw-bolder fs-6 text-decoration-underline" runat="server"></span>
                <div class="row m-4 p-5 bg-opacity-75 rounded-3 cardDettagli"  runat="server">
                   <div class="col-3">
                     <asp:Image ID="Image1"  class="card-img-top" runat="server" AlternateText="Miniatura" />
-                  <div class=" input-group mt-3 ">
-                     <span class="input-group-btn">
-                     <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
-                       <span >-</span>
-                     </button>
-                     </span>
-                       <input type="text" class="form-control input-number " size="2" value="1" min="1" max="10">
-                       <span class="input-group-btn">
-                      <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
-                      <span >+</span>
-                     </button>
-                      </span>
-                      </div>
+                   <div class="input-group mb-3 mt-4">
+     <asp:Button ID="bottone2" runat="server" Text="-" CssClass="btn btn-danger" OnClick="MinButton" />
+                       <input id="Quantity" type="text" value="1" runat="server"/>
+     <asp:Button ID="Bottone3" runat="server" Text="+" CssClass="btn btn-success" OnClick="PlusButton" />
+    </div>
+    
                       </div>
                     <div class="col-9">
-                      <h3 class="card-title" id="Titolo" runat="server"></h3>
-                      <h4 class="card-title" id="Prezzo" runat="server"></h4>
+                      <h3 class="card-title mb-2" id="Titolo" runat="server"></h3>
+                      <h4 class="card-title mb-2 text-black-50 text-decoration-underline" id="Prezzo" runat="server"></h4>
+                        <h5 class="card-title text-black-50 text-decoration-underlin" id="Editore" runat="server"></h5>
                       <p class="card-text" id="Dettaglio" runat="server"></p>
-                      <asp:Button ID="Button1" runat="server" Text="Aggiungi al carrello" OnClick="Button1_Click"/>
+                      <asp:Button ID="Button1" runat="server" Text="Aggiungi al carrello" CssClass="btn btn-warning border-white" OnClick="Button1_Click"/>
 
                     </div>
                 </div>

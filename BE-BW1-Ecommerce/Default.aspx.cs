@@ -51,11 +51,15 @@ namespace BE_BW1_Ecommerce
             try
             {
                 conn.Open();
-                
+
                 string query = $"SELECT IDGiocoDaTavolo, Titolo, Prezzo, Immagine FROM [Prodotto] WHERE IDGiocoDaTavolo = {productId}";
 
+
                 SqlCommand cmd = new SqlCommand(query, conn);
+
                 SqlDataReader reader = cmd.ExecuteReader();
+
+
                 // se c'è un risultato nella query allora aggiungo il prodotto al carrello con i suoi dati
                 if (reader.Read()) 
                 {
@@ -65,6 +69,7 @@ namespace BE_BW1_Ecommerce
                     // creo un nuovo prodotto e gli assegno i dati del prodotto recuperato dal database 
                     Prodotto prodotto = new Prodotto(); 
                     prodotto.Id = Convert.ToInt32(reader["IDGiocoDaTavolo"]); 
+
                     prodotto.Titolo = reader["Titolo"].ToString();
                     prodotto.Prezzo = Convert.ToDecimal(reader["Prezzo"]);
                     prodotto.Immagine = reader["Immagine"].ToString(); 
