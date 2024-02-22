@@ -19,7 +19,10 @@
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
     <link rel="stylesheet" type="text/css" href="Site.css" />
+
+
 
 </head>
 <body>
@@ -43,6 +46,7 @@
         </Scripts>
     </asp:ScriptManager>
 
+
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" runat="server" href="~/">Casablanca Board Games</a>
@@ -58,6 +62,7 @@
                      <asp:Button ID="SezioneAdmin" CssClass="btn btn-warning mx-1" Visible="false" Text="Sezione Admin" PostBackUrl="~/Admin.aspx" OnClick="SezioneAdmin_Click" runat="server" />
                 </ul>
             </div>
+
         </div>
     </nav>
     <div class="container body-content">
