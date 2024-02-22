@@ -107,12 +107,9 @@ namespace BE_BW1_Ecommerce
         //    //    //    /  //     //   //    //    //   //   //   //     //
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-
             if (Session["cart"] == null)
             {
-                // Se la sessione non contiene ancora una lista
-                Session["cart"] = new List<Prodotto>();
+                Session["cart"] = new List<CartItem>();
             }
 
             SqlConnection conn = serverConnection.Connection();
@@ -127,8 +124,7 @@ namespace BE_BW1_Ecommerce
 
                 if (reader.Read())
                 {
-                    // Recupera la lista esistente dal carrello nella sessione
-                    List<Prodotto> cart = (List<Prodotto>)Session["cart"];
+                    List<CartItem> cart = (List<CartItem>)Session["cart"];
 
                     Prodotto prodotto = new Prodotto();
                     prodotto.Id = Convert.ToInt32(reader["IDGiocoDaTavolo"]);
@@ -136,16 +132,15 @@ namespace BE_BW1_Ecommerce
                     prodotto.Prezzo = Convert.ToDecimal(reader["Prezzo"]);
                     prodotto.Immagine = reader["Immagine"].ToString();
 
-                    // finché currentValue è superiore a i i++ e mi aggiunge un prodotto a Cart {++_____++}
                     int.TryParse(Quantity.Value, out int currentValue);
-                    for (int i = 0; i < currentValue; i++ ) {
-
-                        cart.Add(prodotto);
+                    CartItem cartItem = new CartItem();
+                    cartItem.Prodotto = prodotto;
+                    for (int i = 0; i < currentValue; i++)
+                    {
+                        cartItem.Quantita += 1;
                     }
-                    
-                    
+                    cart.Add(cartItem);
 
-                    // Aggiorno la sessione cart con la lista aggiornata
                     Session["cart"] = cart;
 
                     Response.Redirect("Dettagli?ID=" + prodotto.Id);
@@ -160,7 +155,6 @@ namespace BE_BW1_Ecommerce
                 conn.Close();
             }
         }
-
 
     }
 }
