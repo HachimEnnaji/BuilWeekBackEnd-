@@ -30,21 +30,19 @@ namespace BE_BW1_Ecommerce
                 {
                     conn.Close();
                 }
-
             }
         }
 
-        // al click del bottone aggiungo il prodotto al carrello 
+        // al click del bottone aggiungo il prodotto al carrello
         protected void addToCart_Click1(object sender, EventArgs e)
         {
-            // recupero l'id del prodotto dal command argument del bottone 
+            // recupero l'id del prodotto dal command argument del bottone
             string productId = ((System.Web.UI.WebControls.LinkButton)sender).CommandArgument;
 
-            //se il carrello è vuoto lo inizializzo con una nuova lista di prodotti 
+            //se il carrello è vuoto lo inizializzo con una nuova lista di prodotti
             if (Session["cart"] == null)
             {
                 Session["cart"] = new List<CartItem>();
-
             }
             // stabilisco la connessione al database e recupero i dati del prodotto dal database con una query
             SqlConnection conn = serverConnection.Connection();
@@ -52,21 +50,20 @@ namespace BE_BW1_Ecommerce
             {
                 conn.Open();
 
-                string query = $"SELECT IDGiocoDaTavolo, Titolo, Prezzo, Immagine FROM [Prodotto] WHERE IDGiocoDaTavolo = {productId}";
-
+                string query =
+                    $"SELECT IDGiocoDaTavolo, Titolo, Prezzo, Immagine FROM [Prodotto] WHERE IDGiocoDaTavolo = {productId}";
 
                 SqlCommand cmd = new SqlCommand(query, conn);
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
-
                 // se c'è un risultato nella query allora aggiungo il prodotto al carrello con i suoi dati
                 if (reader.Read())
                 {
-                    // recupero il carrello dalla sessione e lo casto a List<CartItem> 
+                    // recupero il carrello dalla sessione e lo casto a List<CartItem>
                     List<CartItem> cart = (List<CartItem>)Session["cart"];
 
-                    // creo un nuovo prodotto e gli assegno i dati del prodotto recuperato dal database 
+                    // creo un nuovo prodotto e gli assegno i dati del prodotto recuperato dal database
                     Prodotto prodotto = new Prodotto();
                     prodotto.Id = Convert.ToInt32(reader["IDGiocoDaTavolo"]);
 
@@ -77,7 +74,6 @@ namespace BE_BW1_Ecommerce
                     //cerco CartItem nel carrello con Find, se esiste già incremento la quantità, altrimenti ne creo uno nuovo
                     CartItem existingCartItem = cart.Find(i => i.Prodotto.Id == prodotto.Id);
                     if (existingCartItem != null)
-
                     {
                         existingCartItem.Quantita++;
                     }
@@ -101,8 +97,40 @@ namespace BE_BW1_Ecommerce
             {
                 conn.Close();
             }
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            //se il carrello è vuoto lo inizializzo con una nuova lista di prodotti
+            if (Session["cart"] == null)
+            {
+                Session["cart"] = new List<CartItem>();
+            }
+            // stabilisco la connessione al database e recupero i dati del prodotto dal database con una query
 
 
+            SqlConnection conn = serverConnection.Connection();
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SEARCH", conn);
+
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@ricerca", Text1.Value);
+
+                SqlDataReader reader1 = cmd.ExecuteReader();
+                cardRepeater.DataSource = reader1;
+                cardRepeater.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

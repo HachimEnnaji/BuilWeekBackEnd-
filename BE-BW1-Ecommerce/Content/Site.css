@@ -3,7 +3,8 @@
 body {
     background: rgb(40,0,60);
     background: linear-gradient(180deg, rgba(40,0,60,0.8981967787114846) 0%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%);
-   height:100vh;
+   min-height:100vh;
+    position:relative;
 }
 
 .title {
@@ -65,13 +66,6 @@ textarea {
     box-shadow: 5px 3px 8px 1px rgba(255,255,255,0.3) !important;
 }
 
-div image {
-    /*width: 33%;*/
-    /*aspect-ratio: 3/2;*/
-    /*object-fit: contain;*/
-}
-
-
 /*-------Stile Carrello-------*/
 .product-image {
     width: 100px;
@@ -90,11 +84,6 @@ div image {
 /*linear-gradient(180deg, rgba(31, 36, 39, 10.8981967787114846) 0%, rgba(0,0,0,1) 100%, rgba(0,0,0,1) 100%)*/
 
 /* modifiche del 22/02 */
-
-/*footer*/
-footer {
-    color: white;
-}
 
 /*btn custom*/
 #SvuotaCarrello {
