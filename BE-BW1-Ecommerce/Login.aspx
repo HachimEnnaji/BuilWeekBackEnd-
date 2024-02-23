@@ -13,17 +13,17 @@
                         <asp:Label ID="lblMessage" runat="server" Text=""></asp:Label>
                     </p>
                     <div class="form-group">
-                        <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" placeholder="E-mail" />
+                        <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control detail-font" placeholder="E-mail" />
                     </div>
                     <div class="form-group mt-2">
-                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" placeholder="Password" />
-                        <asp:Label ID="pwError" runat="server" Text="Password obbligatoria." CssClass="text-danger mt-2" Visible="false"></asp:Label>
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control detail-font" TextMode="Password" placeholder="Password" />
+                        <asp:Label ID="pwError" runat="server" Text="Password obbligatoria." CssClass="text-danger mt-2 detail-font" Visible="false"></asp:Label>
                     </div>
                     <div class="form-group">
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn  mt-2 btnLogin"  OnClick="btnLogin_Click" />
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn  mt-2 btnLogin detail-font"  OnClick="btnLogin_Click" />
                         <div class="mt-2 pb-3">
-                            <asp:Label ID="lblRegistrati1" runat="server" Text="Username o password non validi. Se non hai un account, " Visible="false" CssClass="text-danger"></asp:Label>
-                            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Registrazione.aspx" Visible="false">Registrati</asp:LinkButton>
+                            <asp:Label ID="lblRegistrati1" runat="server" Text="Username o password non validi. Se non hai un account, " Visible="false" CssClass="text-danger detail-font"></asp:Label>
+                            <asp:LinkButton ID="LinkButton1" CssClass="detail-font" runat="server" PostBackUrl="~/Registrazione.aspx" Visible="false">Registrati</asp:LinkButton>
                         </div>
                     </div>
                 </div>

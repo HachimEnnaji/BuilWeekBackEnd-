@@ -4,7 +4,6 @@
 
     <main>
         <div class="container">
-<h2 id="demo" runat="server"></h2>
             <div class="row">
                 <asp:Repeater ID="cardRepeater" runat="server">
                     <ItemTemplate>

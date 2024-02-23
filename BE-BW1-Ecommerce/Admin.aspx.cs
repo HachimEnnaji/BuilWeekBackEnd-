@@ -14,7 +14,7 @@ namespace BE_BW1_Ecommerce
             else
             {
                 string username = Session["username"].ToString();
-                demo.InnerHtml = username;
+
                 SqlConnection conn = serverConnection.Connection();
                 try
                 {
