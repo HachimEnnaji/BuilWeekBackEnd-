@@ -15,7 +15,7 @@
 </div>
         <div class="form-group">
 <label for="descrizione">Descrizione</label>
-  <textarea class="form-control" ID="txtDescrizione"  runat="server" rows="6" CssClass="d-block">Descrizione</textarea>
+  <textarea class="form-control" ID="txtDescrizione"  runat="server" rows="6" CssClass="d-block"></textarea>
 </div>
         <div class="form-group">
 <label for="editore">Editore</label>
