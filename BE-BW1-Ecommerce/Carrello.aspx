@@ -25,7 +25,7 @@
 </asp:Repeater>
         <hr cssClass="mx-3" />
         <!--Totale del carrello-->
-        <h2 cssClass="detail-font mx-2 text-white">Totale: <span id="Totale"  runat="server"></span></h2>
+        <h2 cssClass="mx-4 text-white" class="totaleCustom">Totale: <span id="Totale" class="detail-font text-white"  runat="server"></span></h2>
     </div>
 
 </asp:Content>

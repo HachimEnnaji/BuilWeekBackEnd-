@@ -181,3 +181,10 @@ footer {
     font-family: "Nunito", sans serif;
     
 }
+
+.totaleCustom {
+    font-family: "Aladin", system-ui;
+    color: white;
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+}
