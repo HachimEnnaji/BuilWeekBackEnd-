@@ -12,7 +12,7 @@
                                 <img src='<%# Eval ("Immagine") %>' class="card-img-top" alt='<%# Eval ("Titolo") %>'>
                                 <div class="card-body">
                                     <h5 class="card-title"><%# Eval ("Titolo") %></h5>
-                                    <p class="card-text"><%# Eval ("Prezzo", "{0:c2}") %></p>
+                                    <p class="card-text badge fs-5 detail-font"><%# Eval ("Prezzo", "{0:c2}") %></p>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between">
                                     <a href="Modifica.aspx?ID=<%# Eval("IDGiocoDaTavolo") %>" class="btn btn-warning rounded-circle"><i class="fa-solid fa-wrench"></i></a>

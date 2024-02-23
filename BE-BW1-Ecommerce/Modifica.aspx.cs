@@ -33,7 +33,7 @@ namespace BE_BW1_Ecommerce
                                 //prendi il prezzo e lo converti in decimal con due cifre dopo lo 0 senza la valuta
                                 decimal prezzoCompleto = Convert.ToDecimal(reader["Prezzo"]);
                                 txtPrezzo.Text = prezzoCompleto.ToString();
-                                txtDescrizione.Text = reader["Dettaglio"].ToString();
+                                txtDescrizione.Value = reader["Dettaglio"].ToString();
                                 txtEditore.Text = reader["Editore"].ToString();
                                 txtImmagine.Text = reader["Immagine"].ToString();
                             }
@@ -64,11 +64,11 @@ namespace BE_BW1_Ecommerce
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Titolo", txtTitolo.Text);
                 cmd.Parameters.AddWithValue("@Prezzo", txtPrezzo.Text);
-                cmd.Parameters.AddWithValue("@Dettaglio", txtDescrizione.Text);
+                cmd.Parameters.AddWithValue("@Dettaglio", txtDescrizione.Value);
                 cmd.Parameters.AddWithValue("@Editore", txtEditore.Text);
                 cmd.Parameters.AddWithValue("@Immagine", txtImmagine.Text);
                 cmd.Parameters.AddWithValue("@ID", id);
-                System.Diagnostics.Debug.WriteLine(txtTitolo.Text, txtPrezzo.Text, txtDescrizione.Text);
+                System.Diagnostics.Debug.WriteLine(txtTitolo.Text, txtPrezzo.Text, txtDescrizione.Value);
                 SqlDataReader reader = cmd.ExecuteReader();
             }
             catch (Exception ex)

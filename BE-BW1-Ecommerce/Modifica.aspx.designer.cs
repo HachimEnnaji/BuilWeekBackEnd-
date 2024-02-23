@@ -39,7 +39,7 @@ namespace BE_BW1_Ecommerce
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDescrizione;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescrizione;
 
         /// <summary>
         /// Controllo txtEditore.

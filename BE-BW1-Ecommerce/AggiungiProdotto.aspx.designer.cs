@@ -33,13 +33,13 @@ namespace BE_BW1_Ecommerce
         protected global::System.Web.UI.WebControls.TextBox prezzo;
 
         /// <summary>
-        /// Controllo descrizione.
+        /// Controllo txtDescrizione.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descrizione;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescrizione;
 
         /// <summary>
         /// Controllo editore.

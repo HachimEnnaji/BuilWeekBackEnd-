@@ -27,7 +27,7 @@ namespace BE_BW1_Ecommerce
 
                 cmd.Parameters.AddWithValue("@Titolo", titolo.Text);
                 cmd.Parameters.AddWithValue("@Prezzo", prezzo.Text);
-                cmd.Parameters.AddWithValue("@Dettaglio", descrizione.Text);
+                cmd.Parameters.AddWithValue("@Dettaglio", txtDescrizione.Value);
                 cmd.Parameters.AddWithValue("@Editore", editore.Text);
                 cmd.Parameters.AddWithValue("@Immagine", immagine.Text);
 

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-6 wrapper shadow rounded mt-4">
                 <div class="container">
-                    <h2 class="pt-3">Benvenuto in Casablanca Board Games</h2>
+                    <h2 class="pt-3">Benvenuto in Pendragon Board Games</h2>
                     <p class="fs-4">
                         Accedi
                     </p>
